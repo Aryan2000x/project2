@@ -1,5 +1,9 @@
 # Parkour Spot Finder
 
+![](https://i.imgur.com/cfPyVCX.jpg)
+
+**[parkour spot finder](https://github.com/Aryan2000x/project2)**
+
 ## Overview
 
 - The main goal of this webapp is to connect fellow freerunners all around world share their "perfect" spot so that we all train together.
@@ -17,10 +21,6 @@
 - can view their profile and post their freerunning spots.
 
 - can add favourite spots
-
-![](https://i.imgur.com/cfPyVCX.jpg)
-
-**[parkour spot finder](https://github.com/Aryan2000x/project2)**
 
 ## Technology Used
 
