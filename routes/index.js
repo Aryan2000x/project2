@@ -5,7 +5,7 @@ var Spot = require("../models/spot");
 
 // The root route renders our only view
 router.get("/", function (req, res) {
-  res.redirect("/home");
+  res.redirect("/parkour-spot-finder.herokuapp.com/home");
 });
 
 router.get("/profile-view/:id", function (req, res, next) {
