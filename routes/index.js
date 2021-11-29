@@ -11,7 +11,9 @@ router.get("/", function (req, res) {
 router.get("/profile-view/:id", function (req, res, next) {
   User.findById(req.params.id, function (err, user) {
     Spot.find({ user: user._id }, function (err, addedSpots) {
-      res.render("profile", { addedSpots, user });
+      Spot.find({ _id: user.favSpot }, function (err, favSpots) {
+        res.render("profile", { addedSpots, user, favSpots });
+      });
     });
   });
 });

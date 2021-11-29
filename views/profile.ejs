@@ -41,7 +41,6 @@
     <div class="profile-info">
         <h1><%= user.name.substring(0, user.name.indexOf(" ")) %></h1>
         <h3>Name : <%= user.name %></h3>
-        <h3>email: <%= user.email %></h3>
     </div>
     <h2>My Recent Posts</h2>
     <div class="view-post">
@@ -55,7 +54,13 @@
     </div>
     <h2>Favourite Spots</h2>
     <div class="view-post">
-
+      <% favSpots.forEach((spot) => { %>
+        <div class="spot-posts">
+            <label><%= spot.localName %>
+                <br />
+            <img src="<%=spot.imgUrl %>" width="240px" height="160px"></label>
+        </div>
+     <% }) %>
     </div>
   </body>
 </html>

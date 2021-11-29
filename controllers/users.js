@@ -26,7 +26,6 @@ function show(req, res, next) {
   User.findById(req.params.id, function (err, user) {
     Spot.find({ user: user._id }, function (err, addedSpots) {
       Spot.find({ _id: user.favSpot }, function (err, favSpots) {
-        console.log(favSpots);
         res.render("users/profile", { addedSpots, user, favSpots });
       });
     });
