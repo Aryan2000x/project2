@@ -4,6 +4,7 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 // session middleware
 var session = require("express-session");
+const AerospikeStore = require("aerospike-session-store")(session);
 var passport = require("passport");
 
 // load the env vars
@@ -35,6 +36,12 @@ app.use(cookieParser());
 app.use(
   session({
     secret: "project2",
+    store: new AerospikeStore({
+      namespace: "express",
+      set: "session",
+      ttl: 86400, // 1 day
+      hosts: "localhost:3000,parkour-spot-finder.herokuapp.com",
+    }),
     resave: false,
     saveUninitialized: true,
   })
