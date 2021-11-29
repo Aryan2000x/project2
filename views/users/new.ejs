@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/home">Home</a>
+      <% if (user) { %>
+      <a href="/<%= user._id %>/post">Post</a>
+      <% } else { %>
+      <a href="/auth/google">Post</a>
+      <% } %>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <% if (user) { %>
+          <img class="profile-pic" src="<%= user.avatar %>" />
+          <br />
+          <%= user.name %> <% } else {%>
+          <img class="default-pic" src="https://i.imgur.com/hoVvDnJ.jpg" />
+          <br />
+          Sign up <% } %>
+        </button>
+        <div class="dropdown-content">
+          <% let login = "auth/google"; %>
+          <a href=<%= user ? `/${user._id}/profile` : login %>>Profile</a>
+          <a href=<%= user ? `/${user._id}/post` : login %>>Post</a>
+          <% if (user) { %>
+          <a href="/logout">Log Out</a>
+          <% } else { %>
+          <a href="/auth/google">Login with Google</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="post-form">
+        <form method="POST" action="/<%= user._id %>/profile">
+            <label>
+                <label>Name Spot:</label>
+                <input type="text" name="localName" placeholder="Ex. No Man's land">
+                <br /><br />
+                <label>Country:</label>
+                <input type="text" name="country" placeholder="Ex. Canada">
+                <br /><br />
+                <label>State/Province:</label>
+                <input type="text" name="stateProvince" placeholder="Ex. Ontario">
+                <br /><br />
+                <label>Address</label>
+                <input type="text" name="address">
+                <br /><br />
+                <input type="text" name="imgUrl" placeholder="Enter image url">
+                <input type="submit" value="Post">
+            </label>
+        </form>
+    </div>
+  </body>
+</html>

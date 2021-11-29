@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/home">Home</a>
+      <% if (user) { %>
+      <a href="/<%= user._id %>/post">Post</a>
+      <% } else { %>
+      <a href="/auth/google">Post</a>
+      <% } %>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <% if (user) { %>
+          <img class="profile-pic" src="<%= user.avatar %>" />
+          <br />
+          <%= user.name %> <% } else {%>
+          <img class="default-pic" src="https://i.imgur.com/hoVvDnJ.jpg" />
+          <br />
+          Sign up <% } %>
+        </button>
+        <div class="dropdown-content">
+          <% let login = "auth/google"; %>
+          <a href=<%= user ? `/${user._id}/profile` : login %>>Profile</a>
+          <a href=<%= user ? `/${user._id}/post` : login %>>Post</a>
+          <% if (user) { %>
+          <a href="/logout">Log Out</a>
+          <% } else { %>
+          <a href="/auth/google">Login with Google</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-info">
+        <h1><%= user.name.substring(0, user.name.indexOf(" ")) %></h1>
+        <h3>Name : <%= user.name %></h3>
+        <h3>email: <%= user.email %></h3>
+    </div>
+    <h2>My Recent Posts</h2>
+    <div class="view-post">
+        <% addedSpots.forEach((spot) => { %>
+            <div class="spot-posts">
+                <label><%= spot.localName %>
+                    <br />
+                <img src="<%=spot.imgUrl %>" width="240px" height="160px"></label>
+            </div>
+        <% }) %>
+    </div>
+    <h2>Favourite Spots</h2>
+    <div class="view-post">
+
+    </div>
+  </body>
+</html>
