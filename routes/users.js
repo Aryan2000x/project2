@@ -6,9 +6,9 @@ router.get("/home", usersCtrl.index);
 
 router.get("/:id/profile", isLoggedIn, usersCtrl.show);
 
-router.get("/:id", isLoggedIn, function (req, res, next) {
-  res.redirect(`${req.params.id}/profile`);
-});
+// router.get("/:id", isLoggedIn, function (req, res, next) {
+//   res.redirect(`${req.params.id}/profile`);
+// });
 
 router.get("/:id/post", isLoggedIn, usersCtrl.new);
 
