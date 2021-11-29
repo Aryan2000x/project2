@@ -12,7 +12,8 @@ router.get("/profile-view/:id", function (req, res, next) {
   User.findById(req.params.id, function (err, user) {
     Spot.find({ user: user._id }, function (err, addedSpots) {
       Spot.find({ _id: user.favSpot }, function (err, favSpots) {
-        res.render("profile", { addedSpots, user, favSpots });
+        const userId = user;
+        res.render("profile", { addedSpots, userId, favSpots });
       });
     });
   });
@@ -38,5 +39,10 @@ router.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/home");
 });
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) return next();
+  res.redirect("/auth/google");
+}
 
 module.exports = router;
