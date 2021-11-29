@@ -22,6 +22,8 @@
 
 - can add favourite spots
 
+- able to add comments in the spot page
+
 ## Technology Used
 
 - CSS
