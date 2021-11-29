@@ -4,13 +4,13 @@ var passport = require("passport");
 
 router.get("/home", usersCtrl.index);
 
-router.get("/:id/profile", usersCtrl.show);
+router.get("/:id/profile", isLoggedIn, usersCtrl.show);
 
-router.get("/:id", function (req, res, next) {
+router.get("/:id", isLoggedIn, function (req, res, next) {
   res.redirect(`${req.params.id}/profile`);
 });
 
-router.get("/:id/post", usersCtrl.new);
+router.get("/:id/post", isLoggedIn, usersCtrl.new);
 
 router.post("/:id/profile", isLoggedIn, usersCtrl.create);
 

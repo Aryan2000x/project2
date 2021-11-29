@@ -17,12 +17,12 @@ function index(req, res, next) {
 }
 
 function newPost(req, res, next) {
-  console.log(`${req.params.id}/newpost`);
+  console.log(`/${req.params.id}/newpost`);
   res.render("users/new");
 }
 
 function show(req, res, next) {
-  console.log(`${req.params.id}/profile`);
+  console.log(`/${req.params.id}/profile/`);
   User.findById(req.params.id, function (err, user) {
     Spot.find({ user: user._id }, function (err, addedSpots) {
       Spot.find({ _id: user.favSpot }, function (err, favSpots) {
