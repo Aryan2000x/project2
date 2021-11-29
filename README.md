@@ -20,7 +20,7 @@
 
 ![](https://i.imgur.com/cfPyVCX.jpg)
 
-**[CLICK to play my Game](https://github.com/Aryan2000x/project2)**
+**[parkour spot finder](https://github.com/Aryan2000x/project2)**
 
 ## Technology Used
 
@@ -32,3 +32,11 @@
 - MongoDB Atlas
 - EJS
 - Heroku
+
+## Upcoming features
+
+- delete and update features for users
+
+- Search query for getting location of a spot based on location
+
+- Get a better styled webpage
