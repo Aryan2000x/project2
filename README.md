@@ -1,30 +1,34 @@
-# Welcome to my Project 1
+# Parkour Spot Finder
 
-## OBJECTIVE:
+## Overview
 
-- To be the first player to connect 4 of the same colored chips in a row (either vertically, horizontally, or diagonally)
-  ![](https://i.imgur.com/Lqnm1sF.png)
-  ![](https://i.imgur.com/lWxA4Yx.png)
-  ![](https://i.imgur.com/fCU6e47.png)
+- The main goal of this webapp is to connect fellow freerunners all around world share their "perfect" spot so that we all train together.
 
-## HOW TO PLAY:
+## Viwwer's Features
 
-- First Player gets to choose first, click on the column you want set your chip in. The chips will always place above the board and other chips.
+- Viewers able to view recent post in homepage and can select post for futher info
 
-- Players must alternate turns.
+- Viewers can look at the post's author profile page
 
-![](https://i.imgur.com/jRyW9f1.png)
+## User's Features
 
-- The game ends when there is a 4-in-a-row or a stalemate.
+- Able to login through google account
 
-- Click on reset to clear the board and start all over again.
+- can view their profile and post their freerunning spots.
 
-![](https://i.imgur.com/fH4AFlU.png)
+- can add favourite spots
 
-**[CLICK to play my Game](https://pages.git.generalassemb.ly/aryan2000x/project-1/)**
+![](https://i.imgur.com/cfPyVCX.jpg)
+
+**[CLICK to play my Game](https://github.com/Aryan2000x/project2)**
 
 ## Technology Used
 
 - CSS
 - HTML
 - Javascript
+- Express.js
+- Mongoose
+- MongoDB Atlas
+- EJS
+- Heroku
