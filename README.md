@@ -4,7 +4,7 @@
 
 - The main goal of this webapp is to connect fellow freerunners all around world share their "perfect" spot so that we all train together.
 
-## Viwwer's Features
+## Viewer's Features
 
 - Viewers able to view recent post in homepage and can select post for futher info
 
